@@ -1,13 +1,12 @@
 @import 'modern-normalize/modern-normalize.css';
 @import './base.css';
 @import './reset.css';
-@import './base.css';
 @import './container.css';
 @import './header.css';
 @import './footer.css';
-@import './hero.css';
-@import './filters.css';
-@import './exercises.css';
-@import './modal.css';
-@import './favorites.css';
-@import './quote.css';
+/* @import './hero.css'; */
+/* @import './filters.css'; */
+/* @import './exercises.css'; */
+/* @import './modal.css'; */
+/* @import './favorites.css'; */
+/* @import './quote.css'; */

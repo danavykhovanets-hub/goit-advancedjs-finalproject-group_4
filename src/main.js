@@ -6,6 +6,13 @@ import { initRatingModal } from './js/modal-rating.js';
 import { initSubscription } from './js/subscription.js';
 import { initPagination } from './js/pagination.js';
 
+/**
+ * For those who will use iziToast notifications:
+ * Do not forget to add those imports to your files
+ * import iziToast from 'izitoast';
+ * import 'izitoast/dist/css/iziToast.min.css';
+ */
+
 initFilters();
 initQuote();
 renderCategories();

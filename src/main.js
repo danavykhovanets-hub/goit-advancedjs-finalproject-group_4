@@ -6,7 +6,6 @@ import { initRatingModal } from './js/modal-rating.js';
 import { initSubscription } from './js/subscription.js';
 import { initPagination } from './js/pagination.js';
 
-initHeader();
 initFilters();
 initQuote();
 renderCategories();

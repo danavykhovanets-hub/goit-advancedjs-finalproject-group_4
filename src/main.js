@@ -1,4 +1,3 @@
-import { initHeader } from './js/header.js';
 import { initFilters } from './js/filters.js';
 import { initQuote } from './js/quote.js';
 import { renderCategories } from './js/render.js';

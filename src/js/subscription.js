@@ -30,26 +30,41 @@ export function initSubscription() {
     setLoading(button, true);
 
     try {
-      await subscribe(email);
+      const data = await subscribe(email);
       iziToast.success({
         title: 'Success',
-        message: 'Thanks for subscribing! Check your inbox.',
+        message: data?.message ?? 'Thanks for subscribing!',
         position: 'topRight',
       });
       form.reset();
     } catch (error) {
-      console.log('ERROR', error);
       iziToast.error({
         title: 'Error',
-        message:
-          error?.response?.data?.message ??
-          'Something went wrong. Please try again later.',
+        message: getErrorMessage(error),
         position: 'topRight',
       });
     } finally {
       setLoading(button, false);
     }
   });
+}
+
+function getErrorMessage(error) {
+  const status = error?.response?.status;
+  const serverMessage = error?.response?.data?.message;
+
+  switch (status) {
+    case 400:
+      return serverMessage ?? 'Invalid request. Please check your email.';
+    case 404:
+      return serverMessage ?? 'Subscription service was not found.';
+    case 409:
+      return serverMessage ?? 'This email is already subscribed.';
+    case 500:
+      return serverMessage ?? 'Server error. Please try again later.';
+    default:
+      return serverMessage ?? 'Something went wrong. Please try again later.';
+  }
 }
 
 function setLoading(button, isLoading) {

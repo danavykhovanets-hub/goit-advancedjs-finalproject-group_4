@@ -5,6 +5,8 @@ import { initModal } from './js/modal-exercise.js';
 import { initRatingModal } from './js/modal-rating.js';
 import { initSubscription } from './js/subscription.js';
 import { initPagination } from './js/pagination.js';
+import { initHeader } from './js/header.js';
+import { initScrollUp } from './js/scroll-up.js';
 
 /**
  * For those who will use iziToast notifications:
@@ -13,6 +15,7 @@ import { initPagination } from './js/pagination.js';
  * import 'izitoast/dist/css/iziToast.min.css';
  */
 
+initHeader();
 initFilters();
 initQuote();
 renderCategories();
@@ -20,3 +23,4 @@ initModal();
 initRatingModal();
 initSubscription();
 initPagination();
+initScrollUp();

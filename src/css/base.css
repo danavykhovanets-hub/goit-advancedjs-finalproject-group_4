@@ -12,7 +12,7 @@
 body {
   font-family: var(--font-main);
   color: var(--color-dark);
-  background-color: var(--color-white);
+  background-color: var(--color-light);
   margin: 0;
 }
 

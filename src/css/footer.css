@@ -1,21 +1,474 @@
-.footer {
-  padding: 20px 0;
+.site-footer {
+  padding: 40px 0 20px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
 }
-.footer-desc {
-  text-align: center;
+
+.footer-container {
+  display: grid;
+  gap: 40px;
 }
-.footer-link {
-  position: relative;
+
+.footer-brand-block,
+.footer-subscribe-block,
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
 }
-.footer-link::before {
-  content: '';
+
+.footer-brand-block {
+  gap: 20px;
+}
+
+.footer-logo,
+.footer-logo-icon {
+  color: var(--color-light);
+}
+
+.footer-slogan {
+  max-width: 335px;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.footer-slogan span {
+  font-style: italic;
+}
+
+.footer-subscribe-block {
+  gap: 20px;
+}
+
+.footer-subscribe-text {
+  font-size: 14px;
+  line-height: 1.28;
+}
+
+.subscribe-form {
+  gap: 12px;
+}
+
+.subscribe-input,
+.subscribe-btn {
+  width: 100%;
+  min-height: 42px;
+  border-radius: 30px;
+  font-size: 14px;
+  line-height: 1.28;
+}
+
+.subscribe-input {
+  border: 1px solid var(--color-light);
+  padding: 12px 14px;
+  color: var(--color-light);
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 200ms ease;
+}
+
+.subscribe-input::placeholder {
+  color: rgba(244, 244, 244, 0.6);
+}
+
+.subscribe-input:focus {
+  border-color: var(--color-white);
+}
+
+.subscribe-input:not(:placeholder-shown):invalid {
+  border-color: #eea10c;
+}
+
+.subscribe-btn {
+  border: none;
+  padding: 12px 14px;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.subscribe-btn:hover,
+.subscribe-btn:focus {
+  opacity: 0.85;
+}
+
+.subscribe-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "copy copy"
+    "policy year";
+  column-gap: 24px;
+  row-gap: 10px;
+  align-items: end;
+  color: rgba(244, 244, 244, 0.9);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.footer-copy {
+  grid-area: copy;
+}
+
+.footer-policy {
+  grid-area: policy;
+}
+
+.footer-year {
+  grid-area: year;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.visually-hidden {
   position: absolute;
-  bottom: 6%;
-  left: 50%;
-  transform: translateX(-50%) skewX(-12deg);
-  z-index: -1;
-  width: 110%;
-  height: 24%;
-  background-color: #41d1ff;
-  transition: 200ms ease;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .site-footer {
+    padding-top: 64px;
+    padding-bottom: 32px;
+  }
+
+  .footer-container {
+    grid-template-columns: 156px 1fr;
+    grid-template-areas:
+      "brand slogan"
+      "brand subscribe"
+      "bottom bottom";
+    align-items: start;
+    column-gap: 114px;
+    row-gap: 0;
+  }
+
+  .footer-brand-block {
+    grid-area: brand;
+    gap: 32px;
+  }
+
+  .footer-slogan {
+    grid-area: slogan;
+    width: 434px;
+    max-width: 434px;
+    font-size: 56px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+  }
+
+  .footer-subscribe-block {
+    grid-area: subscribe;
+    width: 352px;
+    gap: 20px;
+    padding-top: 32px;
+  }
+
+  .footer-subscribe-text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .subscribe-form {
+    gap: 16px;
+  }
+
+  .subscribe-input,
+  .subscribe-btn {
+    min-height: 42px;
+  }
+
+  .footer-bottom {
+    grid-area: bottom;
+    display: grid;
+    grid-template-columns: 156px 1fr 64px;
+    grid-template-areas: "copy policy year";
+    column-gap: 114px;
+    align-items: center;
+    padding-top: 98px;
+  }
+
+  .footer-policy,
+  .footer-year {
+    justify-self: start;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .site-footer {
+    padding-top: 64px;
+    padding-bottom: 28px;
+  }
+
+  .footer-container {
+    grid-template-columns: 156px 595px 345px;
+    grid-template-areas:
+      "brand slogan subscribe"
+      "bottom bottom bottom";
+    column-gap: 72px;
+  }
+
+  .footer-brand-block {
+    gap: 24px;
+  }
+
+  .footer-slogan {
+    max-width: 595px;
+    font-size: 56px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+  }
+
+  .footer-subscribe-block {
+    width: 345px;
+    gap: 16px;
+  }
+
+  .footer-subscribe-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .subscribe-form {
+    gap: 16px;
+  }
+
+  .subscribe-input,
+  .subscribe-btn {
+    min-height: 42px;
+  }
+
+  .footer-bottom {
+    grid-template-columns: 192px 212px 345px;
+    column-gap: 82px;
+    padding-top: 60px;
+  }
+
+  .footer-policy,
+  .footer-year {
+    justify-self: start;
+  }
+}
+
+/* Stable footer text wrapping on mobile */
+.footer-slogan {
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(32px, 10.15vw, 38px);
+}
+
+.footer-slogan-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.footer-slogan-accent {
+  font-style: italic;
+}
+
+.footer-copy,
+.footer-policy,
+.footer-year {
+  white-space: nowrap;
+}
+
+.footer-bottom {
+  min-width: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-slogan {
+    width: 434px;
+    max-width: 434px;
+    font-size: 56px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer-slogan {
+    width: auto;
+    max-width: 595px;
+    font-size: 56px;
+  }
+}
+
+.footer-slogan-line {
+  font-style: normal;
+}
+
+.footer-slogan-accent {
+  font-style: italic;
+}
+
+/* Scroll up button */
+.scroll-up-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 900;
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  line-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(16px);
+  transition: opacity 200ms ease, visibility 200ms ease, transform 200ms ease;
+}
+
+.scroll-up-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.scroll-up-icon {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 40px;
+  height: 40px;
+  transition: opacity 200ms ease;
+}
+
+.scroll-up-icon-default {
+  opacity: 1;
+}
+
+.scroll-up-icon-hover {
+  opacity: 0;
+}
+
+.scroll-up-btn:hover .scroll-up-icon-default,
+.scroll-up-btn:focus .scroll-up-icon-default,
+.scroll-up-btn:focus-visible .scroll-up-icon-default {
+  opacity: 0;
+}
+
+.scroll-up-btn:hover .scroll-up-icon-hover,
+.scroll-up-btn:focus .scroll-up-icon-hover,
+.scroll-up-btn:focus-visible .scroll-up-icon-hover {
+  opacity: 1;
+}
+
+@media only screen and (min-width: 768px) {
+  .scroll-up-btn {
+    right: 32px;
+    bottom: 32px;
+  }
+}
+
+/* Footer text alignment fixes */
+.footer-slogan-line {
+  font-style: normal;
+}
+
+.footer-slogan-accent {
+  font-style: italic;
+}
+
+.footer-slogan-desktop {
+  display: none;
+}
+
+@media only screen and (max-width: 767.98px) {
+  .footer-slogan-mobile {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(32px, 10.15vw, 38px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer-slogan-mobile {
+    font-size: 56px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .footer-container {
+    grid-template-columns: 156px 595px 345px;
+    grid-template-areas:
+      "brand slogan subscribe"
+      "bottom bottom bottom";
+    column-gap: 72px;
+  }
+
+  .footer-slogan-mobile {
+    display: none;
+  }
+
+  .footer-slogan-desktop {
+    display: block;
+    grid-area: slogan;
+    width: 595px;
+    max-width: 595px;
+    font-size: 56px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+  }
+
+  .footer-bottom {
+    display: grid;
+    grid-template-columns: 156px 595px 345px;
+    column-gap: 72px;
+    align-items: center;
+    padding-top: 60px;
+  }
+
+  .footer-copy,
+  .footer-policy,
+  .footer-year {
+    white-space: nowrap;
+  }
+
+  .footer-policy,
+  .footer-year {
+    justify-self: start;
+  }
+}
+
+/* Tablet footer slogan overflow fix */
+@media only screen and (min-width: 768px) and (max-width: 1439.98px) {
+  .footer-container {
+    grid-template-columns: 156px minmax(0, 1fr);
+    column-gap: 114px;
+  }
+
+  .footer-slogan,
+  .footer-slogan-mobile {
+    width: 100%;
+    max-width: 434px;
+    min-width: 0;
+    font-size: clamp(44px, 6.8vw, 56px);
+    line-height: 1.07;
+  }
+
+  .footer-slogan-mobile .footer-slogan-line {
+    display: inline;
+    white-space: normal;
+  }
+
+  .footer-slogan-mobile .footer-slogan-line:first-child::after {
+    content: ' ';
+  }
 }

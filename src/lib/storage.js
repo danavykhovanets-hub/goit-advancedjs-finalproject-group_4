@@ -1,5 +1,3 @@
-export const FAVORITES_STORAGE_KEY = 'favorites';
-
 export class StorageService {
   constructor(key, storage = localStorage) {
     this.key = key;
@@ -50,5 +48,3 @@ export class StorageService {
     }
   };
 }
-
-export const favoritesStorage = new StorageService(FAVORITES_STORAGE_KEY);
